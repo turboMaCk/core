@@ -80,7 +80,7 @@ tests =
         , test "filter" <| assertEqual (Array.fromList [2,4,6]) (Array.filter (\x -> x % 2 == 0) (Array.fromList [1..6]))
         ]
 
-      sliceArrayTest = suite "Slice Array"
+      sliceArrayTests = suite "Slice Array"
         [ test "array < 32" <| assertEqual (Array.initialize 31 identity |> Array.slice 31 32) (Array.fromList [])
         , test "array == 32" <| assertEqual (Array.initialize 32 identity |> Array.slice 32 33) (Array.fromList [])
         ]
@@ -90,6 +90,6 @@ tests =
         ]
   in
       suite "Array"
-        [ creationTests, basicsTests, getAndSetTests
+        [ creationTests, basicsTests, getAndSetTests, sliceArrayTests
         , takingArraysApartTests, mappingAndFoldingTests, nativeTests
         ]
