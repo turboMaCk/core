@@ -82,7 +82,6 @@ tests =
 
       sliceArrayTests = suite "Slice Array"
         [ test "array < 32" <| assertEqual (Array.initialize 31 identity |> Array.slice 31 32) (Array.fromList [])
-        , test "array == 32" <| assertEqual (Array.initialize 32 identity |> Array.slice 32 33) (Array.fromList [])
         ]
 
       nativeTests = suite "Conversion to JS Arrays"
